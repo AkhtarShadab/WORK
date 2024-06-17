@@ -238,5 +238,12 @@ Distortion coefficients correct for lens distortion, which can cause straight li
 - **k1, k2 (radial distortion)**: Correct for the radial distortion, where points appear farther away or closer than they actually are.
 - **p1, p2 (tangential distortion)**: Correct for the tangential distortion, where the image plane is not parallel to the lens.
 
+### Code to run
+docker run -it --rm \
+    --env="DISPLAY=$DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --memory="4g" \
+    --name mins_container \
 In this output, you see the current intrinsic and distortion parameters compared with their previous values, indicating how the parameters have changed during the calibration process. This comparison helps in assessing the stability and accuracy of the calibration over time.
 
